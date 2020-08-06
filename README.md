@@ -29,7 +29,7 @@ There are buttons available for each provided function, and a *Memo* to show the
 
 ## Useful Links
 
- - [AAR Library und API documentation](https://www.microsensys.de/downloads/DevSamples/Libraries/Windows/TELID300%20-%20native%20library/)
+ - [Native Library and API documentation](https://www.microsensys.de/downloads/DevSamples/Libraries/Windows/TELID300%20-%20native%20library/)
  - [Check what offers our TELID®soft for PC! Download using this link](https://www.microsensys.de/downloads/CDContent%20TELIDsoft.zip)
 
 ## Contact
