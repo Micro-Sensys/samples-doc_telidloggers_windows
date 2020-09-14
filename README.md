@@ -1,8 +1,7 @@
 # samples-doc_telidloggers_windows / Windows DOC sample code for TELID®311 datalogger
 This sample code is for handling **TELID®311** dataloggers on Windows devices using a Micro-Sensys USB RFID reader.
 
-[Test LINK: ](../doc/communication-modes/spc)
-//TODO Add link See "..."
+> For details on DOC communication check [Useful Links](#Useful-Links) 
 
 ## Requirements
 * Delphi IDE
@@ -19,7 +18,7 @@ There are functions available to find, read log and program new logging process.
 Just import this project into Delphi IDE, make sure the Micro-Sensys USB RFID reader is connected to the computer and start the debug session.
 There are buttons available for each provided function, and a *Memo* to show the result of the function
 
-//TODO screenshot!!
+>> **TODO screenshot!!**
 <!--- ![Screenshot](screenshot/SampleApp_SpcControl_AndroidJava.png) --->
 
  1. Check RFID reader is detected and Reader ID is shown in bottom part of the window
@@ -29,8 +28,10 @@ There are buttons available for each provided function, and a *Memo* to show the
 
 ## Useful Links
 
- - [Native Library and API documentation](https://www.microsensys.de/downloads/DevSamples/Libraries/Windows/TELID300%20-%20native%20library/)
- - [Check what offers our TELID®soft for PC! Download using this link](https://www.microsensys.de/downloads/CDContent%20TELIDsoft.zip)
+* [Native Library and API documentation](https://www.microsensys.de/downloads/DevSamples/Libraries/Windows/TELID300%20-%20native%20library/)
+* Check what offers our TELID®soft for PC! Download using [this link](https://www.microsensys.de/downloads/CDContent%20TELIDsoft.zip)
+* GitHub *doc* repository: [Micro-Sensys/doc](https://github.com/Micro-Sensys/doc)
+	* [communication-modes/doc](https://github.com/Micro-Sensys/doc/tree/master/communication-modes/doc)
 
 ## Contact
 
