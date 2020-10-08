@@ -30,8 +30,8 @@ There are buttons available for each provided function, and a *Memo* to show the
 
 * [Native Library and API documentation](https://www.microsensys.de/downloads/DevSamples/Libraries/Windows/TELID300%20-%20native%20library/)
 * Check what offers our TELID®soft for PC! Download using [this link](https://www.microsensys.de/downloads/CDContent%20TELIDsoft.zip)
-* GitHub *doc* repository: [Micro-Sensys/doc](https://github.com/Micro-Sensys/doc)
-	* [communication-modes/doc](https://github.com/Micro-Sensys/doc/tree/master/communication-modes/doc)
+* GitHub *documentation* repository: [Micro-Sensys/documentation](https://github.com/Micro-Sensys/documentation)
+	* [communication-modes/documentation](https://github.com/Micro-Sensys/documentation/tree/master/communication-modes/doc)
 
 ## Contact
 
