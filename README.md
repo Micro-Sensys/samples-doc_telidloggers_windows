@@ -18,8 +18,7 @@ There are functions available to find, read log and program new logging process.
 Just import this project into Delphi IDE, make sure the Micro-Sensys USB RFID reader is connected to the computer and start the debug session.
 There are buttons available for each provided function, and a *Memo* to show the result of the function
 
->> **TODO screenshot!!**
-<!--- ![Screenshot](screenshot/SampleApp_SpcControl_AndroidJava.png) --->
+![Screenshot](screenshot/NativeTest_TELID3xx.png)
 
  1. Check RFID reader is detected and Reader ID is shown in bottom part of the window
  2. Press *Scan for TELID datalogger* and check a TELID® dataloger is found
