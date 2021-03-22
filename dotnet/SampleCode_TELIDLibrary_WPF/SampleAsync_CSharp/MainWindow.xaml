@@ -1,0 +1,171 @@
+﻿<Window x:Class="SampleAsync_CSharp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SampleAsync_CSharp"
+        mc:Ignorable="d" Closing="Window_Closing"
+        Title="SampleCode_TELIDLibrary_WPF - Async" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TabControl Grid.Row="0" Name="tabControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+            <TabItem Name="tabItem_Initialize" Header="Initiailze" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0" Text="Port Type: " Margin="5" />
+                        <RadioButton Grid.Column="1" Name="radioButtonInitialize_PortSerial" Content="Serial" GroupName="PortType" Margin="5" />
+                        <RadioButton Grid.Column="2" Name="radioButtonInitialize_PortBt" Content="Bluetooth" GroupName="PortType" Margin="5" />
+                        <RadioButton Grid.Column="3" Name="radioButtonInitialize_PortUsb" Content="USB" GroupName="PortType" Margin="5" IsChecked="True" />
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0" Text="Port Name: " Margin="5" />
+                        <TextBox Grid.Column="1" Name="textBoxInitialize_PortName" Text="COM1" Width="50" Margin="5" />
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <Button Grid.Column="0" Name="buttonInitialize" Content="Initialize" Width="100" Margin="5" Click="ButtonInitialize_ClickAsync" />
+                        <Button Grid.Column="1" Name="buttonTerminate" Content="Terminate" Width="100" Margin="5" Click="ButtonTerminate_Click" />
+                    </Grid>
+                    <Grid Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0" Text="Library version: " Margin="5" />
+                        <TextBlock Grid.Column="1" Name="textBlockInitialize_DriverVersion" Margin="5" />
+                    </Grid>
+                    <Grid Grid.Row="4">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0" Text="Parameters used for initialize: " Margin="5" />
+                        <TextBlock Grid.Row="1" Name="textBlockInitialize_ParamInterfaceType" Margin="20,5" />
+                        <TextBlock Grid.Row="2" Name="textBlockInitialize_ParamPortType" Margin="20,5" />
+                        <TextBlock Grid.Row="3" Name="textBlockInitialize_ParamPortName" Margin="20,5" />
+                        <TextBlock Grid.Row="4" Name="textBlockInitialize_ParamProtocolType" Margin="20,5" />
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Name="tabItem_T300" Header="TELID® logger functions" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="250" />
+                    </Grid.ColumnDefinitions>
+                    <TabControl Grid.Column="0" Name="tabControl_Telid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <TabItem Name="tabItem_ReadFunctions" Header="TELID® read functions">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <Grid Grid.Row="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Button Grid.Column="0" Name="button_Search" Content="Search TELID" Margin="5" Click="Button_Search_ClickAsync" />
+                                    <Button Grid.Column="1" Name="button_ReadStatus" Content="Read Status" Margin="5" Click="Button_ReadStatus_ClickAsync" />
+                                    <Button Grid.Column="2" Name="button_ReadLogProtocol" Content="Read Log" Margin="5" Click="Button_ReadLogProtocol_ClickAsync" />
+                                </Grid>
+                                <Grid Grid.Row="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock Grid.Row="0" Text="Result: " Margin="5" />
+                                    <TextBox Grid.Row="1" Name="textBox_ResultRead" VerticalAlignment="Stretch" Margin="5,0,0,0" FontSize="12" Text="" IsEnabled="False" />
+                                </Grid>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Name="tabItem_Measurements" Header="Measurements">
+                            <ListBox Name="listBox_Measurements" Margin="5" HorizontalContentAlignment="Stretch" >
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid Margin="0,2">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="150" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="50" />
+                                                <ColumnDefinition Width="50" />
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Grid.Column="0" Text="{Binding Timestamp}" />
+                                            <TextBlock Grid.Column="1" Text="{Binding Values}" />
+                                            <TextBlock Grid.Column="2" Text="{Binding State}" />
+                                            <TextBlock Grid.Column="3" Text="{Binding BatState}" />
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </TabItem>
+                        <TabItem Name="tabItem_ProgramFunctions" Header="TELID® program functions">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="50" />
+                                    <RowDefinition Height="50" />
+                                </Grid.RowDefinitions>
+                                <Button Grid.Row="0" Name="button_Stop" Content="Stop Log" Margin="5" Click="Button_Stop_ClickAsync" />
+                                <Button Grid.Row="1" Name="button_Restart" Content="Restart in 5 minutes" Margin="5" Click="Button_Restart_ClickAsync" />
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
+
+                    <TextBox Grid.Column="1" Name="textBox_ThreadLog" VerticalAlignment="Stretch" FontSize="12" Text="" Background="LightCyan" VerticalScrollBarVisibility="Auto" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Horizontal">
+                <TextBlock Grid.Row="1" Name="textBlock_ReaderInfo" Text="Loading..." Margin="5" />
+                <TextBlock Grid.Row="1" Name="textBlock_Status" Text="" Margin="5" />
+            </StackPanel>
+            <ProgressBar Grid.Column="1" Name="progressBar" />
+            <TextBlock Grid.Column="1" Name="textBlock_TimeRemaining" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Grid>
+    </Grid>
+</Window>
