@@ -212,7 +212,7 @@ namespace SampleAsync_CSharp
                         }
 
                         string toLog = string.Format("Result: OK. Duration: {0}\n", processSpan);
-                        toLog += "- Search Result -\n";
+                        toLog += "- Search result -\n";
                         toLog += string.Format("\tSerNo: {0}\n", scanResult.SerialNumber);
                         toLog += string.Format("\tProduct-Type: {0}\n", scanResult.ProductType);
                         textBox_ThreadLog.Text += toLog;
@@ -267,7 +267,7 @@ namespace SampleAsync_CSharp
                         textBox_ResultRead.Text += scanResult.SensorParameters.ToString();
 
                         string toLog = string.Format("Result: OK. Duration: {0}\n", processSpan);
-                        toLog += "- ReadStatus Result -\n";
+                        toLog += "- ReadStatus result -\n";
                         toLog += string.Format("\tSerNo: {0}\n", telidInfo.SerialNumber);
                         toLog += string.Format("\tProduct-Type: {0}\n", telidInfo.ProductType);
                         toLog += string.Format("\tIsLogging: {0}\n", scanResult.IsLogging);
@@ -355,7 +355,7 @@ namespace SampleAsync_CSharp
                         }
 
                         string toLog = string.Format("Result: OK. Duration: {0}\n", processSpan);
-                        toLog += "- ReadLog Result -\n";
+                        toLog += "- ReadLog result -\n";
                         toLog += string.Format("\tSerNo: {0}\n", telidInfo.SerialNumber);
                         toLog += string.Format("\tProduct-Type: {0}\n", telidInfo.ProductType);
                         toLog += string.Format("\tIsLogging: {0}\n", logResult.IsLogging);
@@ -394,6 +394,7 @@ namespace SampleAsync_CSharp
                     //This function blocks & searches for a default time of 1 second (optional parameter)
                     bool stopResult = await m_TelidControl.StopLogAsync(m_LastReadState);
                     TimeSpan processSpan = DateTime.UtcNow - startTime;
+                    textBox_ThreadLog.Text += "- Stop result -\n";
                     if (stopResult)
                     {
                         m_LastReadState = null;
@@ -428,6 +429,8 @@ namespace SampleAsync_CSharp
                 {
                     DateTime startTime = DateTime.UtcNow;
                     //This function blocks & searches for a default time of 1 second (optional parameter)
+
+                    //TODO --> Use this for TELID300.nfc
                     bool startResult = await m_TelidControl.RestartLogAsync(
                         LogStartParameters.Initialize_TELID300nfc(
                             m_LastReadState,
@@ -438,7 +441,20 @@ namespace SampleAsync_CSharp
                                 TimeSpan.FromSeconds(30),
                                 10,
                                 30)));
+
+                    //TODO --> Use this for TELID300v1 (For example TELID311)
+                    //bool startResult = await m_TelidControl.RestartLogAsync(
+                    //    LogStartParameters.Initialize_TELID300v1(
+                    //        m_LastReadState,
+                    //        "SampleCodeBlock_CSharp",
+                    //        DateTime.Now.AddMinutes(5),
+                    //        TELIDLibrary.Utils.SensorParameters.TELID311_SensorParam.Initiailze(
+                    //            TimeSpan.FromSeconds(30),
+                    //            10,
+                    //            30)));
+
                     TimeSpan processSpan = DateTime.UtcNow - startTime;
+                    textBox_ThreadLog.Text += "- Restart result -\n";
                     if (startResult)
                     {
                         m_LastReadState = null;

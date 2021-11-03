@@ -146,7 +146,7 @@
                                     <RowDefinition Height="50" />
                                 </Grid.RowDefinitions>
                                 <Button Grid.Row="0" Name="button_Stop" Content="Stop Log" Margin="5" Click="Button_Stop_ClickAsync" />
-                                <Button Grid.Row="1" Name="button_Restart" Content="Restart in 5 minutes" Margin="5" Click="Button_Restart_ClickAsync" />
+                                <Button Grid.Row="1" Name="button_Restart" Content="Restart in 5 minutes (see code comments)" Margin="5" Click="Button_Restart_ClickAsync" />
                             </Grid>
                         </TabItem>
                     </TabControl>

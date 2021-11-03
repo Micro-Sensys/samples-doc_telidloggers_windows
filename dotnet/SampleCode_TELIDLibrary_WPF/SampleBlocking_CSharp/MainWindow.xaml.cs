@@ -427,6 +427,8 @@ namespace SampleBlocking_CSharp
                 {
                     DateTime startTime = DateTime.UtcNow;
                     //This function blocks & searches for a default time of 1 second (optional parameter)
+
+                    //TODO --> Use this for TELID300.nfc
                     bool startResult = m_TelidControl.RestartLog(
                         LogStartParameters.Initialize_TELID300nfc(
                             m_LastReadState,
@@ -437,6 +439,18 @@ namespace SampleBlocking_CSharp
                                 TimeSpan.FromSeconds(30),
                                 10,
                                 30)));
+
+                    //TODO --> Use this for TELID300v1 (For example TELID311)
+                    //bool startResult = m_TelidControl.RestartLog(
+                    //    LogStartParameters.Initialize_TELID300v1(
+                    //        m_LastReadState,
+                    //        "SampleCodeBlock_CSharp",
+                    //        DateTime.Now.AddMinutes(5),
+                    //        TELIDLibrary.Utils.SensorParameters.TELID311_SensorParam.Initiailze(
+                    //            TimeSpan.FromSeconds(30),
+                    //            10,
+                    //            30)));
+
                     TimeSpan processSpan = DateTime.UtcNow - startTime;
                     if (startResult)
                     {
