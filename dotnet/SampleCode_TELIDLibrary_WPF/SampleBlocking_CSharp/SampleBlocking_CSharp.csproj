@@ -54,8 +54,8 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
-    <Reference Include="TELIDLibrary, Version=0.9.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsensys.TELIDLibrary.0.9.3\lib\netstandard2.0\TELIDLibrary.dll</HintPath>
+    <Reference Include="TELIDLibrary, Version=0.9.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsensys.TELIDLibrary.0.9.4\lib\netstandard2.0\TELIDLibrary.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
